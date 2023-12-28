@@ -1,0 +1,21 @@
+$colors: (
+  primary: #67ffbb,
+  secondary: #c2dcdc,
+  headerBG: #fff,
+  brandBlack: #151b22,
+  gray: #333,
+  greenSuccess: #6dd230,
+  brandGrayLight: #f5f5f5,
+  brandGrayLight2: #f1f0f0,
+  brandGrayLight3: #e5e5e5,
+);
+
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+$fontStack: "IBM Plex Sans", sans-serif;
+$headerHeightDesktop: 67px;
+$headerHeightTablet: 67px;
+$headerHeightMobile: 67px;
+$footerBase: 482px;

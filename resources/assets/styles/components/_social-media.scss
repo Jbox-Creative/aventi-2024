@@ -1,0 +1,26 @@
+.social-media {
+  display: flex;
+
+  a {
+    width: 39px;
+    height: 39px;
+    border-radius: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color("primary");
+    border: 1px solid color("primary");
+    margin-right: 13px;
+    transition: background 350ms, color 350ms;
+
+    &:hover {
+      background: color("primary");
+      color: white;
+    }
+
+    span {
+      @extend .show-for-sr;
+    }
+  }
+}

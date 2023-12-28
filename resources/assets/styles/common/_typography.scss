@@ -1,0 +1,36 @@
+.pretitle {
+  display: block;
+  margin-bottom: 8px;
+  color: color("primary");
+  font-weight: 500;
+}
+
+.like-h1 {
+  @extend h1;
+}
+
+.like-h2 {
+  @extend h2;
+}
+
+.like-h3 {
+  @extend h3;
+}
+
+.like-h4 {
+  @extend h4;
+}
+
+.like-h5 {
+  @extend h5;
+}
+
+.like-h6 {
+  @extend h6;
+}
+
+p {
+  a {
+    text-decoration: underline;
+  }
+}

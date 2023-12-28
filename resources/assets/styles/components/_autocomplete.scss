@@ -1,0 +1,38 @@
+/* Style Google's autocomplete */
+body .pac-container {
+  border-radius: 7px;
+  padding: 10px;
+  transform: translateY(10px);
+  min-width: 220px;
+  font-family: $fontStack;
+
+  &::after {
+    display: none;
+  }
+
+  .pac-item {
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: color("primary");
+      transition: width 350ms;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

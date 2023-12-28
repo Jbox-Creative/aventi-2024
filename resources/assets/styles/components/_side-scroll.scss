@@ -1,0 +1,13 @@
+.side-scroll {
+  cursor: grab;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* stylelint-disable-line */ /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+
+  &.active {
+    cursor: grabbing;
+  }
+}

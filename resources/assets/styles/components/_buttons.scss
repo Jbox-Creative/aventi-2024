@@ -1,0 +1,79 @@
+.aventi-btn {
+  display: inline-block;
+  background: color("primary");
+  color: color("brandBlack");
+  border: 1px solid color("primary");
+  border-radius: 24px;
+  padding: 12px 22px;
+  font-weight: 400;
+  font-size: 18px;
+  transition: color 350ms, background 350ms;
+  cursor: pointer;
+
+  &:hover {
+    background: color("secondary");
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--outline {
+    border-color: color("brandBlack");
+    background: white;
+    color: color("brandBlack");
+
+    &:hover {
+      border-color: color("primary");
+      background: color("primary");
+      color: color("brandBlack");
+    }
+  }
+
+  &--arrow {
+    border: none;
+    padding: 0;
+
+    i {
+      margin-left: 5px;
+      transition: transform 350ms;
+      transform: translateX(0);
+    }
+
+    &:hover {
+      background: none;
+      color: color("secondary");
+
+      i {
+        transform: translateX(10px);
+      }
+    }
+  }
+
+  &--blue {
+    color: color("primary");
+    border-color: color("brandGrayLight3");
+
+    &:hover {
+      color: white;
+      background: color("primary");
+      border-color: color("primary");
+    }
+  }
+
+  &--inverse {
+    color: white;
+    border-color: white;
+    background: transparent;
+
+    &:hover {
+      background: white;
+      color: color("primary");
+    }
+  }
+
+  .link-end {
+    display: inline-block;
+  }
+}

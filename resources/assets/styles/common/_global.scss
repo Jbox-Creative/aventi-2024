@@ -1,0 +1,16 @@
+body {
+  padding-top: $headerHeightDesktop;
+  overflow-x: hidden;
+
+  .wrap.container {
+    transition: margin 300ms;
+  }
+
+  @include breakpoint(medium down) {
+    padding-top: $headerHeightTablet;
+  }
+
+  @include breakpoint(small down) {
+    padding-top: $headerHeightMobile;
+  }
+}
