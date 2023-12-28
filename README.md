@@ -1,6 +1,6 @@
-# Peppercorn
+# Aventi Group 2024
 
-Custom version of Sage for Blackjet.
+Custom version of Sage for Aventi Group.
 
 Remember to "yarn add node-sass" after running initial yarn.
 
