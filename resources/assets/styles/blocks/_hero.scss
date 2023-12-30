@@ -1,0 +1,71 @@
+.aventi-hero {
+  clip-path: polygon(100% 0, 100% calc(100% - 150px), 50% 100%, 0 calc(100% - 150px), 0 0);
+  position: relative;
+  margin-bottom: 52px;
+
+  &__pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__inner {
+    padding: 84px 0 244px;
+    display: flex;
+    position: relative;
+
+    &--text {
+      // CSS
+    }
+
+    &--image-text {
+      align-items: flex-start;
+      gap: 70px;
+    }
+  }
+
+  &__content {
+    // CSS
+  }
+
+  &__title {
+    // CSS
+  }
+
+  &__text {
+    margin-top: 27px;
+  }
+
+  &__ctas {
+    margin-top: 44px;
+  }
+
+  &__image {
+    flex: 0 0 328px;
+    border-radius: 100%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+
+  &--theme-dark-stripes {
+    background: linear-gradient(180deg, #151b22 3.49%, #0b2543 76.94%);
+
+    h1 {
+      color: white;
+    }
+
+    p {
+      color: color("secondary");
+    }
+  }
+
+  &--theme-light-grid {
+    // CSS
+  }
+}

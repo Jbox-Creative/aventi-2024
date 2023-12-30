@@ -1,0 +1,45 @@
+.cta-block {
+  padding-bottom: 70px;
+  position: relative;
+
+  &__inner {
+    padding: 84px 109px;
+    background: linear-gradient(180deg, #151b22 0%, #0e2c4e 100%);
+    position: relative;
+    width: 900px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: white;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    color: color(secondary);
+    margin-bottom: 38px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__cta {
+    // CSS
+  }
+
+  &--footer {
+    padding-bottom: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 50%;
+      background: color(brandBlack);
+    }
+  }
+}

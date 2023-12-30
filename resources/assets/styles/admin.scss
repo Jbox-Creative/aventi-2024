@@ -1,0 +1,90 @@
+/** Import variables */
+@import "common/variables";
+@import "~foundation-sites/scss/foundation"; // Foundation functions file
+@import "./common/foundation-settings"; // Foundation settings file
+@import "common/fonts";
+
+.editor-styles-wrapper .acf-block-component > div > .acf-block-fields > .acf-field-message {
+  background-color: var(--wp--preset--color--aventi-blue);
+  padding-bottom: 6px;
+  padding-top: 6px;
+
+  p {
+    color: white;
+  }
+}
+
+.editor-styles-wrapper .acf-block-component > div > .acf-block-fields > .acf-field-message .acf-label {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+#edittag {
+  max-width: unset;
+}
+
+// Set max width of Gutenberg editor content to match site's
+.block-editor-writing-flow > .is-layout-flow > * {
+  // max-width: 1230px;
+  padding: 10px;
+}
+
+// make repeaters easier to grok
+.acf-repeater.-row > table > tbody > tr > td,
+.acf-repeater.-block > table > tbody > tr > td {
+  border-top: 2px solid var(--wp--preset--color--aventi-blue) !important;
+}
+
+// block-specific styles, only show within Gutenberg editor preview area
+.wp-block-post-content {
+  @include foundation-global-styles;
+  @include foundation-flex-classes;
+  @include foundation-flex-grid;
+  @include foundation-visibility-classes;
+  @include foundation-text-alignment;
+  @include foundation-float-classes;
+  @include foundation-reveal;
+
+  /** Import common styles */
+  @import "common/global";
+  @import "common/typography";
+
+  /** Import components */
+  @import "components/buttons";
+  // @import "components/forms";
+  @import "components/wp-classes";
+
+  /** Import block styles */
+  @import "blocks/hero";
+  @import "blocks/numbered-cards";
+  @import "blocks/testimonial-carousel";
+  @import "blocks/cta-block";
+}
+
+body .wp-block-post-content {
+  /* Admin-only block styles */
+  .wp-block-columns {
+    // Make fields full width if button global is inside gutenberg columns
+    .acf-clone-fields {
+      .acf-fields {
+        .btn_style_col,
+        .btn_type_col {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  /* Special Admin Styles */
+  .iris-picker,
+  .iris-picker * {
+    box-sizing: content-box;
+  }
+
+  .acf-color-picker .wp-picker-active {
+    z-index: 30;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+}

@@ -1,0 +1,61 @@
+name: (Dev) Deploy theme to WP Engine
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Action variables
+    env:
+      wpengine-environment: aventigroupdev
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Setup cache for PHP dependencies
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress --no-dev --ignore-platform-reqs
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.1'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+
+      - name: Install Node.js dependencies
+        run: yarn
+
+      - name: Compile frontend assets
+        run: yarn build:production
+
+      - name: Remove node_modules directory so it doesn't get deployed
+        run: rm -Rf node_modules
+
+        # move dist dir out of theme dir
+
+      - name: 🚀 Deploy to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: ${{ env.wpengine-environment }}
+          REMOTE_PATH: wp-content/themes/${{ vars.WP_THEME_DIRECTORY }}
+          FLAGS: -azvr --delete-after

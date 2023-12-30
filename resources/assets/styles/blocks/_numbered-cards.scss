@@ -1,0 +1,65 @@
+.numbered-cards {
+  padding-bottom: 124px;
+
+  &__inner {
+    // CSS
+  }
+
+  &__title {
+    text-align: center;
+    width: 620px;
+    margin: 0 auto 44px;
+  }
+
+  &__arrow {
+    display: block;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    counter-reset: numbered-cards;
+  }
+
+  &__item {
+    flex: 0 0 calc(33.33% - 21.33px);
+    border-radius: 10px;
+    border: 1px solid color(brandBlack);
+    background: color(secondaryLight);
+    padding: 36px 50px;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      counter-increment: numbered-cards;
+      content: counter(numbered-cards);
+      width: 54px;
+      height: 54px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 52px;
+      border: 1px solid color(brandBlack);
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      margin-bottom: 52px;
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__cta {
+      // CSS
+    }
+  }
+}

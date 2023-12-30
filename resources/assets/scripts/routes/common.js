@@ -1,7 +1,6 @@
 import lazyLoad from '../util/lazyLoad';
 import forms from '../util/forms';
 import sideScroll from '../util/sideScroll';
-import subnav from '../components/subnav';
 import smoothScroll from '../util/smooth-scroll';
 import smoothScrollToHash from '../util/scrollToHashLoad';
 import navigation from '../components/navigation';
@@ -21,10 +20,6 @@ export default {
     smoothScrollToHash();
     // Footer Scroll
     footerScroll();
-    // subnavs
-    if ($('.subnav').length) {
-      subnav();
-    }
     // mega-menu JS
     if ($('.header').length) {
       navigation();

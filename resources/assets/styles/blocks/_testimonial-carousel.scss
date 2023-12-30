@@ -1,0 +1,42 @@
+.testimonial-carousel {
+  padding-top: 115px;
+  padding-bottom: 72px;
+
+  &__inner {
+    // CSS
+  }
+
+  &__title {
+    border-bottom: 4px solid color(brandBlack);
+    padding-bottom: 16px;
+    margin-bottom: 63px;
+  }
+
+  &__slides {
+    // CSS
+  }
+
+  &__slide {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    &__image {
+      flex: 0 0 294px;
+    }
+
+    &__content {
+      &__quote {
+        // CSS
+      }
+
+      &__author {
+        // CSS
+      }
+
+      &__byline {
+        // CSS
+      }
+    }
+  }
+}
