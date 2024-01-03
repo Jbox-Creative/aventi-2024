@@ -62,6 +62,11 @@ function aventi_pallette() {
             'color' => '#D0EEFA',
         ],
         [
+            'name' => esc_attr__('Lightest Blue', 'default'),
+            'slug' => 'lightest-blue',
+            'color' => '#F4F8F8',
+        ],
+        [
             'name' => esc_attr__('Light Grey', 'default'),
             'slug' => 'light-grey',
             'color' => '#C2DCDC',

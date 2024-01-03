@@ -1,4 +1,4 @@
-body {
+body:not(#tinymce) {
   padding-top: $headerHeightDesktop;
   overflow-x: hidden;
 
@@ -33,6 +33,10 @@ body {
 
 .has-light-blue-background-color {
   background: var(--wp--preset--color--light-blue);
+}
+
+.has-lightest-blue-background-color {
+  background: var(--wp--preset--color--lightest-blue);
 }
 
 .has-cream-background-color {

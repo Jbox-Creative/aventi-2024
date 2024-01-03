@@ -26,6 +26,7 @@ function generic_content_renderer($block) {
     $slug = str_replace('acf/', '', $block['name']);
 
     $data = [
+        'id' => $block['id'],
         'content' => get_field('gc_content'),
     ];
 

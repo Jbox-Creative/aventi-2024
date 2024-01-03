@@ -1,6 +1,6 @@
 <?php
 /**
- * File path: /resources/blocks/aventi-spacer.php
+ * File path: /resources/blocks/team-grid.php
  */
 
 /**
@@ -8,26 +8,27 @@
  * @link https://www.advancedcustomfields.com/resources/acf_register_block/ for more details
  */
 acf_register_block(array(
-    'name'              => 'aventi-spacer',
-    'title'             => __('Aventi Spacer'),
-    'description'       => __('Positive or negative margins at various breakpoints'),
-    'render_callback'   => 'aventi_spacer_renderer',
+    'name'              => 'team-grid',
+    'title'             => __('Team Grid'),
+    'description'       => __('Display the team member posts in a grid, displays details when clicked.'),
+    'render_callback'   => 'team_grid_renderer',
     'category'          => 'aventi-2024-blocks',
-    'icon'              => 'star-filled',
-    'keywords'          => array('gap', 'aventi-2024'),
+    'icon'              => 'businessperson',
+    'keywords'          => array('aventi-2024'),
     'mode'              => 'edit',
 ));
 
 /**
  * Method that renders block on the front end. Do all your logic here
  */
-function aventi_spacer_renderer($block) {
+function team_grid_renderer($block) {
     global $post; // current post
     $slug = str_replace('acf/', '', $block['name']);
 
     $data = [
-        'space' => get_field('space'),
-        'hide_for' => get_field('hide_for'),
+        'id' => $block['id'],
+        'title' => get_field('title'),
+        'team_members' => get_field('team_members'),
     ];
 
     // Pass all data to the view

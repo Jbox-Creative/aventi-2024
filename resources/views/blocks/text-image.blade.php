@@ -1,27 +1,21 @@
-<section @if ($anchor_id) id="{{ $anchor_id }}" @endif class="section
-    text-image text-image--{{ $layout }} text-image--num-{{ $numbering ? 'true' : 'false' }}">
+<section class="section text-image" id="{{ $id }}">
     <div class="row">
         <div class="column">
-            <div class="text-image__inner">
+            <div class="text-image__inner text-image__inner--{{ $layout }}">
                 <div class="text-image__left">
-                    <div class="text-image__left-container">
-                        @if ($icon)
-                            <div class="text-image__icon">
-                                @include('globals.image',['image'=>$icon])
-                            </div>
-                            <br><br>
-                        @endif
-                        @if ($title)
-                            <h2>{!! $title !!}</h2>
-                        @endif
-                        @if ($intro)
+                    @if ($title)
+                        <h2 class="like-h3 text-image__title">{!! $title !!}</h2>
+                    @endif
+                    @if ($intro)
+                        <div class="text-image__text">
                             {!! $intro !!}
-                        @endif
-                        @if ($learn_more_button)
-                            <br><br>
+                        </div>
+                    @endif
+                    @if ($learn_more_button)
+                        <div class="text-image__btn">
                             @include('globals.button',['button'=>$learn_more_button])
-                        @endif
-                    </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="text-image__right">
                     <div class="text-image__image">

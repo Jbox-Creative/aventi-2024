@@ -1,6 +1,6 @@
 <?php
 /**
- * File path: /resources/blocks/aventi-spacer.php
+ * File path: /resources/blocks/word-marquee.php
  */
 
 /**
@@ -8,26 +8,26 @@
  * @link https://www.advancedcustomfields.com/resources/acf_register_block/ for more details
  */
 acf_register_block(array(
-    'name'              => 'aventi-spacer',
-    'title'             => __('Aventi Spacer'),
-    'description'       => __('Positive or negative margins at various breakpoints'),
-    'render_callback'   => 'aventi_spacer_renderer',
+    'name'              => 'word-marquee',
+    'title'             => __('Word Marquee'),
+    'description'       => __('Shows an infinite marquee of words in both small and large font sizes.'),
+    'render_callback'   => 'word_marquee_renderer',
     'category'          => 'aventi-2024-blocks',
-    'icon'              => 'star-filled',
-    'keywords'          => array('gap', 'aventi-2024'),
+    'icon'              => 'leftright',
+    'keywords'          => array('values', 'aventi-2024'),
     'mode'              => 'edit',
 ));
 
 /**
  * Method that renders block on the front end. Do all your logic here
  */
-function aventi_spacer_renderer($block) {
+function word_marquee_renderer($block) {
     global $post; // current post
     $slug = str_replace('acf/', '', $block['name']);
 
     $data = [
-        'space' => get_field('space'),
-        'hide_for' => get_field('hide_for'),
+        'id' => $block['id'],
+        'words' => get_field('words')
     ];
 
     // Pass all data to the view

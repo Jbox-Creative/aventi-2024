@@ -137,6 +137,10 @@
   &__button {
     margin-left: 20px;
     display: none;
+
+    .aventi-btn {
+      font-weight: 400;
+    }
   }
 
   &.open {

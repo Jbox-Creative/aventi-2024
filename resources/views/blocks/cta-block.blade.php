@@ -1,5 +1,5 @@
 @if($title || $text || $cta)
-	<section class="section cta-block @if($footer_block) cta-block--footer @endif">
+	<section class="section cta-block @if($footer_block) cta-block--footer @endif" id="{{ $id }}">
 		<div class="row">
 			<div class="column">
 				<div class="cta-block__inner">

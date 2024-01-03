@@ -1,0 +1,43 @@
+.text-image {
+  padding: 12px 0;
+
+  &__inner {
+    max-width: 1054px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 73px;
+
+    &--left {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__left {
+    // CSS
+  }
+
+  &__title {
+    // CSS
+  }
+
+  &__text {
+    @extend .text-med;
+
+    p {
+      @extend .text-med;
+    }
+  }
+
+  &__btn {
+    // CSS
+  }
+
+  &__right {
+    flex: 0 0 48%;
+  }
+
+  &__image {
+    // CSS
+  }
+}

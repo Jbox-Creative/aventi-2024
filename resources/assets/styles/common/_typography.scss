@@ -43,6 +43,9 @@ h5,
 
 p {
   margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.25;
 
   a {
     text-decoration: underline;
@@ -54,6 +57,12 @@ a {
   &:focus {
     color: inherit;
   }
+}
+
+.heading-xlarge {
+  font-size: 90px;
+  line-height: 1.08;
+  letter-spacing: -1.8px;
 }
 
 .text-large {

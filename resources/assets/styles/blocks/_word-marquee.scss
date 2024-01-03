@@ -1,0 +1,31 @@
+.word-marquee {
+  padding: 110px 0;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: fit-content;
+    transition: 400ms linear;
+  }
+
+  &__word {
+    white-space: nowrap;
+
+    &--small {
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.19px;
+      text-transform: uppercase;
+      padding-top: 8px;
+    }
+
+    &--big {
+      font-size: 120px;
+      font-weight: 500;
+      letter-spacing: -2.4px;
+      line-height: 1.08;
+    }
+  }
+}

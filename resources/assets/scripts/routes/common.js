@@ -1,10 +1,11 @@
 import lazyLoad from '../util/lazyLoad';
 import forms from '../util/forms';
-import sideScroll from '../util/sideScroll';
 import smoothScroll from '../util/smooth-scroll';
 import smoothScrollToHash from '../util/scrollToHashLoad';
 import navigation from '../components/navigation';
 import footerScroll from '../components/footer-scroll';
+import wordMarquee from '../blocks/word-marquee';
+import teamGrid from '../blocks/team-grid';
 
 export default {
   init() {
@@ -24,9 +25,11 @@ export default {
     if ($('.header').length) {
       navigation();
     }
-    // side scrolling on horizontal scroll areas
-    if ($('.side-scroll').length) {
-      sideScroll();
+    if ($('.word-marquee').length) {
+      wordMarquee();
+    }
+    if ($('.team-grid').length) {
+      teamGrid();
     }
   },
   finalize() {

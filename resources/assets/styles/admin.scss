@@ -25,7 +25,7 @@
 
 // Set max width of Gutenberg editor content to match site's
 .block-editor-writing-flow > .is-layout-flow > * {
-  // max-width: 1230px;
+  max-width: 1230px;
   padding: 10px;
 }
 
@@ -59,6 +59,9 @@
   @import "blocks/numbered-cards";
   @import "blocks/testimonial-carousel";
   @import "blocks/cta-block";
+  @import "blocks/text-image";
+  @import "blocks/word-marquee";
+  @import "blocks/team-grid";
 }
 
 body .wp-block-post-content {

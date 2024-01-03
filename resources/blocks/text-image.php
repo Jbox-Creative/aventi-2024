@@ -13,7 +13,7 @@ acf_register_block(array(
     'description'       => __('Text Image with 2 options (Left, Right)'),
     'render_callback'   => 'text_image_renderer',
     'category'          => 'aventi-2024-blocks',
-    'icon'              => 'star-filled',
+    'icon'              => 'align-pull-left',
     'keywords'          => array('aventi-2024'),
     'mode'              => 'edit',
 ));
@@ -28,13 +28,12 @@ function text_image_renderer($block) {
     $layout = get_field('ti_layout');
 
     $data = [
+        'id' => $block['id'],
         'layout' => $layout,
-        'icon' => get_field('ti_icon'),
         'title' => get_field('ti_title'),
-        'anchor_id' => get_field('ti_anchor_id'),
         'intro' => get_field('ti_intro'),
         'learn_more_button' => get_field('ti_learn_more_button'),
-        'img' => get_field('ti_accent_image'),
+        'img' => get_field('ti_image'),
     ];
 
     // Pass all data to the view
