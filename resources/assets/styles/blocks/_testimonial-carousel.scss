@@ -1,41 +1,96 @@
 .testimonial-carousel {
   padding-top: 115px;
   padding-bottom: 72px;
+  overflow: hidden;
 
   &__inner {
     // CSS
   }
 
   &__title {
-    border-bottom: 4px solid color(brandBlack);
     padding-bottom: 16px;
     margin-bottom: 63px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 99999999px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-bottom: 4px solid color(brandBlack);
+    }
   }
 
   &__slides {
-    // CSS
+    display: flex;
   }
 
   &__slide {
     display: flex;
     align-items: flex-start;
     gap: 32px;
+    flex: 0 0 75%;
+    padding-right: 52px;
+    opacity: 0.2;
+    transition: 400ms;
+
+    &.active {
+      opacity: 1;
+    }
 
     &__image {
       flex: 0 0 294px;
     }
 
     &__content {
+      svg {
+        width: 39px;
+        margin-bottom: 11px;
+      }
+
       &__quote {
-        // CSS
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 17px;
       }
 
       &__author {
-        // CSS
+        border-top: 1px solid color(brandBlack);
+        padding-top: 14px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.15;
       }
 
       &__byline {
-        // CSS
+        font-size: 14px;
+        line-height: 1.15;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 43px;
+
+    button {
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      border: 1px solid color(brandBlack);
+      cursor: pointer;
+      transition: 200ms;
+
+      &:hover {
+        background: transparentize(color(brandBlack), 0.5);
+      }
+
+      &.active {
+        background: color(brandBlack);
       }
     }
   }

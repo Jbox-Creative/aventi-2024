@@ -6,6 +6,7 @@ import navigation from '../components/navigation';
 import footerScroll from '../components/footer-scroll';
 import wordMarquee from '../blocks/word-marquee';
 import teamGrid from '../blocks/team-grid';
+import testimonialCarousel from '../blocks/testimonial-carousel';
 
 export default {
   init() {
@@ -30,6 +31,9 @@ export default {
     }
     if ($('.team-grid').length) {
       teamGrid();
+    }
+    if ($('.testimonial-carousel').length) {
+      testimonialCarousel();
     }
   },
   finalize() {
